@@ -1,0 +1,91 @@
+<section class="eventsHeader">
+
+  <div class="slideToggle">
+    <mat-slide-toggle  (click)="changeView()" > Change View </mat-slide-toggle>
+  </div>
+<!-- [checked]="!listView" -->
+    <h1>Event Panel</h1>
+
+    <button id="createButton" type="button" class="btn btn-outline-success" routerLink="/events/add-event">Create New</button>
+
+  </section >
+
+<section class="table-section" *ngIf="listView else fullView">
+<table class="table table-striped table-responsive-sm">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Starts</th>
+        <th scope="col">Ends</th>
+        <th scope="col"> </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let events of myEvents">
+
+        <td> {{events.eventName}}</td>
+        <td>{{events.start_date | date: 'MM/dd/yy'}}</td>
+        <td>{{events.end_date | date: 'MM/dd/yy'}}</td>
+        
+        <td> 
+          <button routerLink="/events/edit-event/{{events.id}}" type="button" class="btn btn-outline-primary btn-sm tableBTN">Edit</button> 
+          <button (click)="deleteButtonPress(events)" type="button" class="btn btn-outline-danger btn-sm tableBTN" data-toggle="modal" data-target="#myModal" data-backdrop="true">Delete</button>
+        </td>
+
+      </tr>
+    </tbody>
+
+  </table>
+</section>
+
+<!-- ======================================================================= -->
+<!-- Full View -->
+<!-- ======================================================================= -->
+
+<ng-template #fullView>
+  <div class="card myCard mat-elevation-z1" style="width: 20rem;" *ngFor="let events of myEvents">
+    <img class="card-img-top myCardImage" src="{{events.url}}" alt="event image">
+    <div class="card-block myCardContent">
+      <h4 class="card-title myCardTitle">{{events.eventName}}</h4>
+      <p>{{events.start_date | date: 'MM/dd/yy'}} - {{events.end_date | date: 'MM/dd/yy'}}</p>
+      <p class="card-text myCardText">{{events.about.substring(0, 120)}}...</p>
+
+      <div class="buttonBox">
+        <button routerLink="/events/edit-event/{{events.id}}" type="button" class="btn btn-outline-primary btn-sm tableBTN">Edit</button> 
+        <button (click)="deleteButtonPress(events)" type="button" class="btn btn-outline-danger btn-sm tableBTN" data-toggle="modal" data-target="#myModal" data-backdrop="true">Delete</button>
+      </div>
+
+    </div>
+  </div>
+</ng-template>
+
+<!-- ======================================================================= -->
+<!-- Modal --> 
+<!-- ======================================================================= -->
+
+<div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Delete Event</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this event? All Changes will have permanent effect.
+      </div>
+      <div class="modal-footer">
+        <button (click)="goBackButton()" type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
+        <button (click)="deleteButtonConfirmed()" type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

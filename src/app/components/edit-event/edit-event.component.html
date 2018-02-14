@@ -1,0 +1,119 @@
+<section class="addEventHeader">
+  <h1>Edit Event</h1>
+
+</section>
+
+
+<div id="form" class="card">
+  <div class="card-body">
+    <form #eventForm="ngForm" (ngSubmit)="onSubmit(eventForm)">
+
+      <!-- ================================================================= -->
+      <!-- Event name input -->
+      <!-- ================================================================= -->
+
+      <div class="form-group">
+        <label for="eventName"> Event Name</label>
+      
+        <input 
+          type="text" 
+          class="form-control" 
+          name="eventName"
+          #eventName="ngModel"
+          [(ngModel)]="event.eventName" 
+          [ngClass]="{'is-invalid':eventName.errors && eventName.touched}"
+          minlength="3"
+          required 
+          >
+
+        <div [hidden]="!eventName.errors?.required" class="invalid-feedback">
+          Event name required
+        </div>
+        <div [hidden]="!eventName.errors?.minlength" class="invalid-feedback">
+          Event name must be at least 3 characters long
+        </div>
+      </div>
+
+      
+
+      <!-- ================================================================= -->
+      <!-- Dates -->
+      <!-- ================================================================= -->
+      
+      <mat-form-field>
+          <input 
+          matInput 
+          [matDatepicker]="startDate" 
+          placeholder="Start Date"
+          name="start_date"
+          [(ngModel)]="event.start_date" >
+
+          <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+          <mat-datepicker #startDate ></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+          <input 
+          matInput 
+          [matDatepicker]="endDate" 
+          placeholder="End Date"
+          name="end_date"
+          [(ngModel)]="event.end_date" >
+          
+          <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+          <mat-datepicker #endDate ></mat-datepicker>
+      </mat-form-field>
+
+<!-- <p>{{event.startDate}} and {{event.endDate}}</p> -->
+
+<!-- ================================================================= -->
+      <!-- PICTURE UPLOAD -->
+<!-- ================================================================= -->
+
+    <div class="form-group">
+      <label class="custom-file">
+        <input type="file" id="files" name="files[]" class="custom-file-input" (change)="previewPicture($event)">
+        <span class="custom-file-control"></span>
+      </label>
+    </div>
+
+  
+    <img *ngIf="downloadURL == undefined else imagePreview" id="imagePreview" src="{{this.event.url}}">
+    <ng-template #imagePreview>
+      <img *ngIf="downloadURL !== undefined" id="imagePreview" [src]="downloadURL | async">
+    </ng-template>
+      <!-- ================================================================= -->
+      <!-- About input -->
+      <!-- ================================================================= -->
+
+      <div class="form-group">
+          <label for="eventName"> About </label>
+        
+          <textarea 
+            type="text" 
+            class="form-control" 
+            name="about"
+            #eventAbout="ngModel"
+            [(ngModel)]="event.about" 
+            [ngClass]="{'is-invalid':eventAbout.errors && eventAbout.touched}"
+            rows="6"
+            minlength="120"
+            maxlength="500"
+            required ></textarea>
+  
+          <div [hidden]="!eventAbout.errors?.required" class="invalid-feedback">
+            Event description is required
+          </div>
+          <div [hidden]="!eventAbout.errors?.minlength" class="invalid-feedback">
+            Event description must be at least 120 characters long
+          </div>
+        </div>
+
+        <input type="submit" value="submit" class="btn btn-primary btn-block"> 
+  
+    </form>
+  </div>
+</div>
+
+
+
