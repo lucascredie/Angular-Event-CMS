@@ -109,7 +109,7 @@ export class EditEventComponent implements OnInit {
 
   savePicture() {
     const file = this.image;
-    const filePath = this.event.eventName + "_img";  //this doesnt work!!!!
+    const filePath = this.event.eventName + "_img";  
     const task = this.storage.upload(filePath, file);
     this.downloadURL = task.downloadURL();
   }

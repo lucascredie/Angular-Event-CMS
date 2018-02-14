@@ -1,0 +1,54 @@
+
+<h1>Staff</h1>
+
+<div id="form" class="card" *ngFor="let staff of staff">
+  <div class="card-body">
+    <form #staffForm="ngForm" (ngSubmit)="onSubmit(staffForm)">
+<!-- ================================================================= -->
+      <!-- PICTURE UPLOAD -->
+<!-- ================================================================= -->
+
+    <div class="form-group">
+      <label class="custom-file">
+        <input type="file" id="files" name="files[]" class="custom-file-input" (change)="previewPicture($event)">
+        <span class="custom-file-control"></span>
+      </label>
+    </div>
+
+  
+    <img *ngIf="downloadURL == undefined else imagePreview" id="imagePreview" src="{{this.staff.url}}">
+    <ng-template #imagePreview>
+      <img *ngIf="downloadURL !== undefined" id="imagePreview" [src]="downloadURL | async">
+    </ng-template>
+      <!-- ================================================================= -->
+      <!-- About input -->
+      <!-- ================================================================= -->
+
+      <div class="form-group">
+          <label for="aboutStaff"> Text </label>
+        
+          <textarea 
+            type="text" 
+            class="form-control" 
+            name="aboutStaff"
+            #aboutStaff="ngModel"
+            [(ngModel)]="staff.aboutStaff" 
+            [ngClass]="{'is-invalid':aboutStaff.errors && aboutStaff.touched}"
+            rows="6"
+            minlength="120"
+            maxlength="500"
+            required ></textarea>
+  
+          <div [hidden]="!aboutStaff.errors?.required" class="invalid-feedback">
+            Staff text is required
+          </div>
+          <div [hidden]="!aboutStaff.errors?.minlength" class="invalid-feedback">
+            Staff text must be at least 120 characters long
+          </div>
+        </div>
+
+        <input type="submit" value="Change" class="btn btn-primary btn-block"> 
+  
+    </form>
+  </div>
+</div>

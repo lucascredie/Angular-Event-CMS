@@ -24,6 +24,8 @@ import { EventserviceService } from './services/eventservice.service';
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { FormsModule } from "@angular/forms";
 import { EditEventComponent } from './components/edit-event/edit-event.component';
+import { StaffComponent } from './components/staff/staff.component';
+import { StaffService } from './services/staff.service';
 
 
 
@@ -37,7 +39,8 @@ import { EditEventComponent } from './components/edit-event/edit-event.component
     NewsfeedpanelComponent,
     ReportpanelComponent,
     AddEventComponent,
-    EditEventComponent
+    EditEventComponent,
+    StaffComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,7 @@ import { EditEventComponent } from './components/edit-event/edit-event.component
     AngularFireStorageModule,
     FormsModule
   ],
-  providers: [EventserviceService],
+  providers: [EventserviceService, StaffService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
