@@ -1,0 +1,8 @@
+
+#imagePreview {
+
+    height: 350px;
+    width: 100%;
+    /* border: solid 2px red; */
+    object-fit: contain;
+}

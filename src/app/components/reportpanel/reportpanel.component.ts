@@ -26,6 +26,7 @@ export class ReportpanelComponent implements OnInit {
   ngOnInit() {
     this.getPdf();
   }
+  
 //FIGURE OUT UNSAFE URL
   getPdf() {
     

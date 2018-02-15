@@ -24,6 +24,7 @@ export class StaffComponent implements OnInit {
   image: object;
   staffId: string = "TF25byqKR4YCjgCXIv5i"; //id wont change since its one document only
 
+  editEnabled: boolean = false;
 
   constructor(
     private staffService: StaffService,

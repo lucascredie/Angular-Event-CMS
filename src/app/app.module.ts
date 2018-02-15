@@ -26,6 +26,7 @@ import { FormsModule } from "@angular/forms";
 import { EditEventComponent } from './components/edit-event/edit-event.component';
 import { StaffComponent } from './components/staff/staff.component';
 import { StaffService } from './services/staff.service';
+import { NewsfeedService } from './services/newsfeed.service';
 
 
 
@@ -53,7 +54,7 @@ import { StaffService } from './services/staff.service';
     AngularFireStorageModule,
     FormsModule
   ],
-  providers: [EventserviceService, StaffService],
+  providers: [EventserviceService, StaffService, NewsfeedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
