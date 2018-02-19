@@ -10,7 +10,6 @@ export class StaffService {
   staffCollection: AngularFirestoreCollection<Staff>; //to grab collection of events from firebase
   staffDoc: AngularFirestoreDocument<Staff>; //to get single event document from firebase
   staffObservable: Observable<Staff[]>; //observable for multiple events
-  singleEventObservable: Observable<Staff>; //observable for single event
 
   constructor(private afs: AngularFirestore) { 
 

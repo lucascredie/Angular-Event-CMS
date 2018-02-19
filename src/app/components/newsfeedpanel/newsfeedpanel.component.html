@@ -1,3 +1,3 @@
-<p>
-  newsfeedpanel works!
+<p *ngFor="let news of myNews">
+  <a href="{{news.url}}" target="_blank"> {{news.url}} </a>
 </p>
