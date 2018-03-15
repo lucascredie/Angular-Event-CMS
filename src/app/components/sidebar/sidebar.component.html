@@ -5,17 +5,17 @@
         <span class="material-icons sidebar-icon" [class.rotate]="!isOpen">navigate_before</span>
      </div>
      <!-- routerLinkActiveOptions is used so the first item is not always active by default -->
-     <div class="icon-block-lg" routerLink="/" [routerLinkActive]="['isActive']" [routerLinkActiveOptions]="{exact: true}">
+     <!-- <div class="icon-block-lg" routerLink="/" [routerLinkActive]="['isActive']" [routerLinkActiveOptions]="{exact: true}">
         <span class="material-icons sidebar-icon">equalizer</span> <h4 class="icon-description" [class.hide]="!isOpen">Dashboard</h4>
-     </div>
+     </div> -->
 
-     <div class="icon-block-lg" routerLink="/events" [routerLinkActive]="['isActive']">
+     <div class="icon-block-lg" routerLink="/" [routerLinkActive]="['isActive']" [routerLinkActiveOptions]="{exact: true}">
          <span class="material-icons sidebar-icon">event_available</span> <h4 class="icon-description" [class.hide]="!isOpen">Events</h4>
       </div>
 
-      <div class="icon-block-lg" routerLink="/newsfeed" [routerLinkActive]="['isActive']">
+      <!-- <div class="icon-block-lg" routerLink="/newsfeed" [routerLinkActive]="['isActive']">
          <span class="material-icons sidebar-icon">textsms</span> <h4 class="icon-description" [class.hide]="!isOpen">News Feed</h4>
-      </div>
+      </div> -->
 
       <div class="icon-block-lg" routerLink="/reports" [routerLinkActive]="['isActive']">
          <span class="material-icons sidebar-icon">description</span> <h4 class="icon-description" [class.hide]="!isOpen">Yearly Report</h4>

@@ -1,6 +1,6 @@
 
 .sidebar {
-    z-index: 1;
+    z-index: 10;
     border-top: 1px solid black;
     width: 300px;
     background: #343A40;

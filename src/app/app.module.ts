@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 //firebase imports
   import { environment } from '../environments/environment';
   import {AngularFireModule } from 'angularfire2';

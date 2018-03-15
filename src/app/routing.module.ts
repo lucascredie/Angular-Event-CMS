@@ -13,10 +13,10 @@ import { StaffComponent } from './components/staff/staff.component';
 
 const routes: Routes = [
   //create routes
-  {path: '', component: DashboardComponent },
+  // {path: '', component: DashboardComponent },
   {path: 'events/edit-event/:id', component: EditEventComponent },
   {path: 'events/add-event', component: AddEventComponent },
-  {path: 'events', component: EventpanelComponent },
+  {path: '', component: EventpanelComponent },
   {path: 'newsfeed', component: NewsfeedpanelComponent },
   {path: 'reports', component: ReportpanelComponent },
   {path: 'staff', component: StaffComponent },

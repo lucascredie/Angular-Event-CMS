@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/observable';
 
+import {DomSanitizer,SafeResourceUrl,} from '@angular/platform-browser';
 
 
 //storage
@@ -19,19 +20,28 @@ export class ReportpanelComponent implements OnInit {
 
   profileURL: Observable<string | null>;
 
-  constructor(private storage: AngularFireStorage) { }
+  documentURL: SafeResourceUrl;
+
+  constructor(
+    private storage: AngularFireStorage,
+    public sanitizer:DomSanitizer
+  ) { }
 
   issuuOn: Boolean = false; //change that to test issuu
 
   ngOnInit() {
     this.getPdf();
+   
   }
   
 //FIGURE OUT UNSAFE URL
   getPdf() {
     
      const ref = this.storage.ref('workout.pdf');
-     this.profileURL = ref.getDownloadURL();
+     ref.getDownloadURL().subscribe(url => {
+       this.documentURL = this.sanitizer.bypassSecurityTrustResourceUrl(url); 
+       console.log(url);
+     });
 
   }
 }

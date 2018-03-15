@@ -2,6 +2,11 @@
   reportpanel works!
 </p>
 
-<a href="">{{ profileURL | async }}</a>
+<!-- <a href="">{{ profileURL | async }}</a> -->
+
+<!-- <a [href]="documentURL"> Click me</a> -->
 <!-- <object data="{{ profileURL | async }}" type="application/pdf"></object> -->
-<iframe *ngIf="issuuOn" style="width:400px; height:300px;" src="//e.issuu.com/embed.html#32676791/58326353" frameborder="0" allowfullscreen></iframe>
+
+<object class="myPDF" [data]="documentURL" type="application/pdf"></object>
+
+<!-- <iframe *ngIf="issuuOn" style="width:400px; height:300px;" src="//e.issuu.com/embed.html#32676791/58326353" frameborder="0" allowfullscreen></iframe> -->

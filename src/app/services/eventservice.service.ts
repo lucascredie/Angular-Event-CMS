@@ -16,7 +16,7 @@ export class EventserviceService {
 
   constructor( private afs: AngularFirestore ) {
     //gets collection from firebase
-    this.eventsCollection = this.afs.collection('events'); //ref=>ref.orderBy('startDate', 'asc')
+    this.eventsCollection = this.afs.collection('events',ref=>ref.orderBy('start_date', 'asc')); //ref=>ref.orderBy('startDate', 'asc')
   
    }
    
