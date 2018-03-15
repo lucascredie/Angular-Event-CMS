@@ -20,7 +20,7 @@ export class EventserviceService {
   
    }
    
-   //MAYBE FIX METHOD
+   
    getEvents(): Observable<Event[]> {
      this.eventsObservable = this.eventsCollection.snapshotChanges().map(changes => {
        return changes.map(action => {

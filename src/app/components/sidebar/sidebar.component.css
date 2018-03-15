@@ -3,7 +3,7 @@
     z-index: 1;
     border-top: 1px solid black;
     width: 300px;
-    background:rgba(52, 52, 52,0.97);
+    background: #343A40;
     position: fixed;
     top: 0px;
     opacity: 1;
@@ -69,7 +69,7 @@
 }
 
 .minify {
-    background:rgba(52, 52, 52,1);
+    background: rgb(32, 35, 39);
     width: 60px;
     transition: 200ms;
 }

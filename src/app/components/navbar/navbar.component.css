@@ -6,6 +6,31 @@
     flex: 1 1 auto;
   }
   nav {
-    z-index: 2;
+    position: relative;
+    z-index: 100;
+    background: rgb(42, 46, 51);
   }
- 
+  .skew2 {
+    margin-top: -139px;
+    background: #29E1E3;
+    height: 150px;
+    transform: skewY(1.1deg);
+    z-index: 80;
+    position: relative;
+  }
+  .skew3 {
+    margin-top: -140px;
+    background: #57B9FF;
+    height: 150px;
+    transform: skewY(1.4deg);
+    z-index: 70;
+    position: relative;
+  }
+  .skew4 {
+    margin-top: -142px;
+    background: #B75EE2;
+    height: 150px;
+    transform: skewY(1.6deg);
+    z-index: 60;
+    position: relative;
+  }
