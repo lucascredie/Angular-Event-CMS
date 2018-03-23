@@ -28,7 +28,7 @@ import { EditEventComponent } from './components/edit-event/edit-event.component
 import { StaffComponent } from './components/staff/staff.component';
 import { StaffService } from './services/staff.service';
 import { NewsfeedService } from './services/newsfeed.service';
-
+import { ReportService } from './services/report.service';
 
 
 @NgModule({
@@ -55,7 +55,7 @@ import { NewsfeedService } from './services/newsfeed.service';
     AngularFireStorageModule,
     FormsModule
   ],
-  providers: [EventserviceService, StaffService, NewsfeedService],
+  providers: [EventserviceService, StaffService, NewsfeedService, ReportService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

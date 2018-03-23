@@ -1,3 +1,11 @@
 .myPDF {
     height: 360px;
 }
+.yearInput {
+    width: 70px;
+    text-align: center;
+    margin: 20px 0px;
+}
+#fileInput {
+    background: red;
+}
