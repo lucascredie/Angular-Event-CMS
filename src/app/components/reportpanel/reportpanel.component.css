@@ -9,3 +9,9 @@
 #fileInput {
     background: red;
 }
+
+#message {
+    padding: 5px;
+    color: rgb(37, 131, 255);
+    border-left: 4px solid rgb(37, 131, 255);
+}

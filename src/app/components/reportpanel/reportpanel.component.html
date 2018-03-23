@@ -51,14 +51,16 @@
                 <select 
                 class="custom-select"
                 name="type"
-                #tyoe="ngModel"
+                #type="ngModel"
                 [(ngModel)]="newReport.type"
                 required>
-                    <option selected >Type</option>
+  
                     <option> Executive Director Annual Report</option>
                     <option> Annual Financial Report</option>
                     <option> Board of Directors Annual Meeting</option>
                   </select>
+
+            
 
                   <input 
                   type="text" 
@@ -76,8 +78,16 @@
                       </label>
                   </div>
 
+                  <p *ngIf="!pdfIsSelected" id="message">
+                      Make sure you selected a pdf file and the year of the report.
+                  </p>
+
+                  <p *ngIf="pdfIsSelected" id="message">
+                      PDF is Ready to go, make sure you add the year.
+                  </p>
+
                 <button  type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
-                <input type="submit" value="submit" class="btn btn-success" > 
+                <input type="submit" value="Add Report" class="btn btn-success"> 
             </form>
         </div>
         

@@ -4,6 +4,7 @@ import { ReportService } from '../../services/report.service';
 import { Report } from '../../models/report';
 import {DomSanitizer,SafeResourceUrl,} from '@angular/platform-browser';
 
+declare var $:any;
 
 //storage
 import {
@@ -19,16 +20,16 @@ import {
 })
 export class ReportpanelComponent implements OnInit {
 
-  issuuOn: Boolean = false; //change that to test issuu
+  pdfIsSelected: boolean = false;
 
-  profileURL: Observable<string | null>;
+  formIsValid: boolean = false;
 
   documentURL: SafeResourceUrl;
 
   myReports: Report[];
 
   newReport: Report = {
-    type: "",
+    type: "Executive Director Annual Report",
     year: "",
     pdfURL: ""
   }
@@ -45,22 +46,13 @@ export class ReportpanelComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this.getPdf();
+ 
     this.reportService.getReports().subscribe(events => {
       this.myReports = events;
       console.log(this.myReports);
     })
 }
-  //sanitizer for URL
-  getPdf() {
-    
-     const ref = this.storage.ref('2015_Annual_Report.pdf');
-     ref.getDownloadURL().subscribe(url => {
-       this.documentURL = this.sanitizer.bypassSecurityTrustResourceUrl(url); 
-       console.log(url);
-     });
-
-  }
+ 
   sanitizeURL(url:string) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
@@ -69,33 +61,45 @@ export class ReportpanelComponent implements OnInit {
     this.myPDF = event.target.files[0];
     this.myPDF_Name = event.target.files[0].name;
     console.log(this.myPDF_Name);
+    this.pdfIsSelected = true;
   }
 
   onSubmit( {value, valid }: {value: Report, valid: boolean}) {
     
-    if(!valid) {
-      //show error message
-      console.log("not valid");
+        console.log(value);
+
+        if(this.pdfIsSelected == true && value.year != "") { 
+
+          this.formIsValid = true;
+
+        } else {
+
+          this.formIsValid = false;
+          console.log("Form is not valid");
+        }
+
+        if(this.formIsValid) {
+
+        const file = this.myPDF; 
+        // const task = this.storage.upload(this.myPDF_Name, file);
+        const task = this.storage.upload(value.type + '_'+value.year + '.pdf' , file);
+        const permanentURL = task.downloadURL();
+
+        permanentURL.subscribe(newUrl => { //grab url from observable
+          console.log("THIS IS URL " + newUrl);
+          value.pdfURL = newUrl;
+          //add event
+          this.reportService.newReport(value);
+        //redirect to event page
+          // this.router.navigate(['/events/']);
+        });
+
+        $('#Add-Report-Modal').modal('hide');
+
+      }     
+
       
-    } else {
 
-      console.log(value, valid);
-
-      const file = this.myPDF; 
-      // const task = this.storage.upload(this.myPDF_Name, file);
-      const task = this.storage.upload(value.type + '_'+value.year + '.pdf' , file);
-      const permanentURL = task.downloadURL();
-
-      permanentURL.subscribe(newUrl => { //grab url from observable
-        console.log("THIS IS URL " + newUrl);
-         value.pdfURL = newUrl;
-        //add event
-        this.reportService.newReport(value);
-      //redirect to event page
-        // this.router.navigate(['/events/']);
-      });
-
-    }
   }
 
   goBackButton() {
@@ -114,7 +118,7 @@ export class ReportpanelComponent implements OnInit {
     const ref = this.storage.ref("");
     ref.child(imagePath).delete();
     this.reportService.deleteReport(this.deadReport);
-}
+  }
 
 
 }
