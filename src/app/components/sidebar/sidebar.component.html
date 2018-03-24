@@ -1,7 +1,7 @@
 <!-- <aside class="sidebar mat-elevation-z8" *ngIf="isOpen, else minifiedSidebar" > -->
 
  <aside class="sidebar mat-elevation-z8" [class.minify]="!isOpen" >
-    <div class="icon-block-lg right-al" (click)="toggleSidebar()">
+    <div class="icon-block-lg right-al openButton" (click)="toggleSidebar()">
         <span class="material-icons sidebar-icon" [class.rotate]="!isOpen">navigate_before</span>
      </div>
      <!-- routerLinkActiveOptions is used so the first item is not always active by default -->

@@ -3,7 +3,7 @@
     z-index: 10;
     border-top: 1px solid black;
     width: 300px;
-    background: #343A40;
+    background: rgba(32, 35, 39,0.93);
     position: fixed;
     top: 0px;
     opacity: 1;
@@ -82,4 +82,9 @@
 }
 .isActive {
     color: #157EFB;
+}
+
+.openButton {
+    margin-top: 40px;
+    /* background: red; */
 }
