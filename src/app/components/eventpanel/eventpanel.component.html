@@ -2,15 +2,16 @@
 
   <div class="slideToggle">
     <mat-slide-toggle  (click)="changeView()" > Change View </mat-slide-toggle>
-  </div>
+    </div>
 <!-- [checked]="!listView" -->
-    <h1>Event Panel</h1>
+    <h1 id="pageTitle">Event Panel</h1>
 
     <button id="createButton" type="button" class="btn btn-outline-success" routerLink="/events/add-event">Create New</button>
 
   </section >
 
-<section class="table-section" *ngIf="listView else fullView">
+<div id="myList" class="card" *ngIf="listView else fullView">  
+<section class="table-section">
 <table class="table table-striped table-responsive-sm">
     <thead>
       <tr>
@@ -30,7 +31,7 @@
         
         <td> 
           <button routerLink="/events/edit-event/{{events.id}}" type="button" class="btn btn-outline-primary btn-sm tableBTN">Edit</button> 
-          <button (click)="deleteButtonPress(events)" type="button" class="btn btn-outline-danger btn-sm tableBTN" data-toggle="modal" data-target="#myModal" data-backdrop="true">Delete</button>
+          <button (click)="deleteButtonPress(events)" type="button" class="btn btn-outline-danger btn-sm tableBTN deleteButton" data-toggle="modal" data-target="#myModal" data-backdrop="true">Delete</button>
         </td>
 
       </tr>
@@ -38,6 +39,7 @@
 
   </table>
 </section>
+</div>
 
 <!-- ======================================================================= -->
 <!-- Full View -->

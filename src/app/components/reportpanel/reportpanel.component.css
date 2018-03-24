@@ -15,3 +15,36 @@
     color: rgb(37, 131, 255);
     border-left: 4px solid rgb(37, 131, 255);
 }
+
+#pageTitle {
+    display: block;
+    margin-left: 5%;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 3em;
+}
+
+#createButton {
+    /* display: block; */
+    margin: 10px 0px 0px 5%;
+
+    height: 40px;
+    width: 120px;
+    margin-left: 5%;
+    background: none;
+    border: none;
+    background: #29E1E3;
+    color: black;
+    /* padding: 10px; */
+    border-radius: 20px;
+    font-size: 14px;
+    transition: 200ms;
+
+    -webkit-box-shadow: 0px 2px 7px -3px rgba(0,0,0,0.35);;
+    -moz-box-shadow: 0px 2px 7px -3px rgba(0,0,0,0.35);
+    box-shadow: 0px 2px 7px -3px rgba(0,0,0,0.35);
+}
+#createButton:hover {
+    transition: 200ms;
+    background: rgb(88, 252, 255);
+}
