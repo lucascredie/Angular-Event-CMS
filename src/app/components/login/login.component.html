@@ -1,27 +1,39 @@
-<div class="row">
-  <div class="col-md-6 mx-auto">
-    <div class="card">
-      <div class="card-body">
 
-        <h1 class="text-center">Log In</h1>
+
+        <!-- <h1>Log In</h1>
 
         <form (submit)="onSubmit()">
 
-          <div class="form-group">
+    
             <label for="email">Email</label>
-            <input class="form-control" type="email" name="email" [(ngModel)]="email" required>
-          </div>
+            <input  type="email" name="email" [(ngModel)]="email" required>
+        
 
-          <div class="form-group">
+        
               <label for="password">Password</label>
-              <input class="form-control" type="password" name="password" [(ngModel)]="password" required>
-            </div>
+              <input type="password" name="password" [(ngModel)]="password" required>
+   
 
-              <input type="submit" value="Log In" class="btn btn-primary btn-block">
-        </form>
+              <input type="submit" value="Log In">
+        </form> -->
 
 
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="container">
+   
+            <h1>WRC <span class="h1span">Staff</span> </h1>
+            
+           <div>
+              <form (submit)="onSubmit()">
+             
+             <label> Email 
+                <input class="field"  type="email" name="email" [(ngModel)]="email" required>
+             </label>
+             
+             <label> Password 
+                <input class="field" type="password" name="password" [(ngModel)]="password" required>
+             </label>
+             
+             <input type="submit" value="Log In" id="sub">
+             </form>
+           </div>
+        </div>
