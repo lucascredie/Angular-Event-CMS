@@ -24,6 +24,7 @@ export class StaffComponent implements OnInit {
   staffId: string = "TF25byqKR4YCjgCXIv5i"; //id wont change since its one document only
 
   editEnabled: boolean = false;
+  uploadTypeError: boolean = false;
 
   constructor(
     private staffService: StaffService,
@@ -40,6 +41,9 @@ export class StaffComponent implements OnInit {
 }
 
 previewPicture(event){
+
+  if(event.target.files[0].type == "image/jpeg" || event.target.files[0].type == "image/png") {
+
   this.image = event.target.files[0];
   const file = event.target.files[0];
   console.log(file);
@@ -47,6 +51,10 @@ previewPicture(event){
   const task = this.storage.upload(filePath, file);
   this.downloadURL = task.downloadURL();
 
+  this.uploadTypeError = false;
+  } else {
+    this.uploadTypeError = true;
+  }
 }
 
 onSubmit({value, valid}:{value: Staff, valid: boolean}) {

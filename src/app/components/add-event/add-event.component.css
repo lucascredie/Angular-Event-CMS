@@ -100,3 +100,9 @@ progress::-webkit-progress-value {
 #file::-webkit-file-upload-button:focus {
     outline: none;
 }
+.warningMessage {
+    color: rgb(255, 146, 73);
+    border-left: 4px solid  rgb(255, 146, 73);
+    padding: 5px;
+    margin: 2px 0px;
+}

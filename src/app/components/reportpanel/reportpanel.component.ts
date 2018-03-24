@@ -26,6 +26,8 @@ export class ReportpanelComponent implements OnInit {
 
   documentURL: SafeResourceUrl;
 
+  uploadTypeError: boolean = false;
+
   myReports: Report[];
 
   newReport: Report = {
@@ -58,10 +60,16 @@ export class ReportpanelComponent implements OnInit {
   }
 
   pdfSelect(event) {
-    this.myPDF = event.target.files[0];
-    this.myPDF_Name = event.target.files[0].name;
-    console.log(this.myPDF_Name);
-    this.pdfIsSelected = true;
+
+    if(event.target.files[0].type == "application/pdf") {
+      this.myPDF = event.target.files[0];
+      this.myPDF_Name = event.target.files[0].name;
+      console.log(this.myPDF_Name);
+      this.pdfIsSelected = true;
+      this.uploadTypeError = false;
+    } else {
+      this.uploadTypeError = true;
+    }
   }
 
   onSubmit( {value, valid }: {value: Report, valid: boolean}) {

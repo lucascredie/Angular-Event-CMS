@@ -75,7 +75,9 @@
                   <div class="form-group">
                       
                         <input type="file" id="file" name="files[]"  (change)="pdfSelect($event)">
-                        
+
+                        <p class="warningMessage" *ngIf="uploadTypeError"> WARNING: Your document is not in the correct file format, please choose a pdf and try again. </p>
+
                   </div>
 
                   <p *ngIf="!pdfIsSelected" id="message">

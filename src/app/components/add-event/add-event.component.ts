@@ -45,6 +45,8 @@ export class AddEventComponent implements OnInit {
 
   hasImage: boolean = false;
 
+  uploadTypeError: boolean = false;
+
   @ViewChild('eventForm') form: any;
 
   
@@ -112,12 +114,23 @@ export class AddEventComponent implements OnInit {
   }
 
   previewPicture(event){
-    this.image = event.target.files[0];
-    const file = event.target.files[0];
-    const filePath = 'display'; 
-    const task = this.storage.upload(filePath, file);
-    this.downloadURL = task.downloadURL();
-    this.hasImage = true;
+   
+    console.log( event.target.files[0].type);
+
+    //error checking
+    if(event.target.files[0].type == "image/jpeg" || event.target.files[0].type == "image/png") {
+      this.image = event.target.files[0];
+      const file = event.target.files[0];
+      const filePath = 'display'; 
+      const task = this.storage.upload(filePath, file);
+      this.downloadURL = task.downloadURL();
+      this.hasImage = true;
+      
+      this.uploadTypeError = false;
+    } else {
+      console.log("what you uploaded is not a picture");
+      this.uploadTypeError = true;
+    }
   }
  
   delete() { //works :)

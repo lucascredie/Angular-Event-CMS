@@ -42,3 +42,10 @@
     width: 90%;
     margin: 0px auto;
 }
+
+.warningMessage {
+    color: rgb(255, 146, 73);
+    border-left: 4px solid  rgb(255, 146, 73);
+    padding: 5px;
+    margin: 2px 0px;
+}

@@ -76,7 +76,8 @@
     <div class="form-group">
     
         <input type="file" id="file" name="files[]"  (change)="previewPicture($event)">
-       
+        <p class="warningMessage" *ngIf="uploadTypeError"> WARNING: You didnt upload an image. A random image will be assigned to this event instead.</p>
+
     </div>
 
   

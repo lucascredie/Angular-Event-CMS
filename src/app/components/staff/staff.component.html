@@ -20,6 +20,8 @@
   <div class="form-group">
     <!-- <label class="custom-file"> -->
       <input type="file" id="file" name="files[]" class="" (change)="previewPicture($event)">
+      <p class="warningMessage" *ngIf="uploadTypeError"> WARNING: You didnt upload an image. A random image will be assigned to this event instead.</p>
+
       <!-- <span class="custom-file-control"></span> -->
     <!-- </label> -->
   </div>

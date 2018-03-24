@@ -25,6 +25,7 @@ export class EditEventComponent implements OnInit {
   image: object; //this will hold the event with the image
   originalImagePath: string; //save the original image path so it can be deleted
   id: string;
+  uploadTypeError: boolean = false;
 
   event: Event = {
     eventName: '',
@@ -56,12 +57,18 @@ export class EditEventComponent implements OnInit {
   }
  
   previewPicture(event){
+
+    if(event.target.files[0].type == "image/jpeg" || event.target.files[0].type == "image/png") {
     this.image = event.target.files[0];
     const file = event.target.files[0];
     console.log(file);
     const filePath = 'display'; 
     const task = this.storage.upload(filePath, file);
     this.downloadURL = task.downloadURL();
+    this.uploadTypeError = false;
+    } else {
+      this.uploadTypeError = true;
+    }
 
   }
 
