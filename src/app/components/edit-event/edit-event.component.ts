@@ -85,7 +85,7 @@ export class EditEventComponent implements OnInit {
                 //add event
                 this.eventService.updateEvent(value);
               //redirect to event page
-                this.router.navigate(['/events/']);
+                this.router.navigate(['/']);
               //show confirmation message
                 this.snackBar.open("Event was editted successfully!", "close", {
                 duration: 4000,
@@ -97,7 +97,7 @@ export class EditEventComponent implements OnInit {
           value.id = this.id;
           value.url = this.event.url;
           this.eventService.updateEvent(value);
-          this.router.navigate(['/events/']);
+          this.router.navigate(['/']);
 
           this.snackBar.open("Event was eddited successfully", "close", {
           duration: 4000,

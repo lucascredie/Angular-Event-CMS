@@ -55,12 +55,17 @@ export class EventpanelComponent implements OnInit {
 
   deleteButtonConfirmed() {   
       //delets image from db
-      const imagePath = this.deadEvent.eventName + "_img";
-      console.log("deleting");
-      const ref = this.storage.ref("");
-      ref.child(imagePath).delete();
-    
-      this.eventSetvice.deleteEvent(this.deadEvent);
+      try {
+        const imagePath = this.deadEvent.eventName + "_img";
+        console.log("deleting");
+        const ref = this.storage.ref("");
+        ref.child(imagePath).delete();  
+        this.eventSetvice.deleteEvent(this.deadEvent);
+
+      } catch (error) {
+        console.log("Picture not found in storage - Might be use of default pic")
+      }
+      
       this.snackBar.open("Event was deleted successfully!", "close", {
         duration: 4000,
       });
