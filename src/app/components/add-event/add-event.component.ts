@@ -87,6 +87,7 @@ export class AddEventComponent implements OnInit {
       permanentURL.subscribe(newUrl => { //grab url from observable
         console.log("THIS IS URL " + newUrl);
          value.url = newUrl;
+         value.imageName = filePath;
         //add event
         this.eventService.newEvent(value);
       //redirect to event page

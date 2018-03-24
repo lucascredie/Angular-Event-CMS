@@ -56,7 +56,8 @@ export class EventpanelComponent implements OnInit {
   deleteButtonConfirmed() {   
       //delets image from db
       try {
-        const imagePath = this.deadEvent.eventName + "_img";
+        // const imagePath = this.deadEvent.eventName + "_img";
+        const imagePath = this.deadEvent.imageName;
         console.log("deleting");
         const ref = this.storage.ref("");
         ref.child(imagePath).delete();  

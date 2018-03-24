@@ -5,4 +5,5 @@ export interface Event {
     start_date?: string;
     end_date?: string;
     url?: any;
+    imageName?: string;
 }
