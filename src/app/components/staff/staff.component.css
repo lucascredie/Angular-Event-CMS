@@ -1,8 +1,44 @@
+#pageTitle {
+    display: block;
+    margin-left: 5%;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 3em;
+}
+
+#file::-webkit-file-upload-button {
+    color: rgb(42, 46, 51);
+    height: 40px;
+    width: 120px;
+    border:none;
+    background: #29E1E3;
+    border-radius: 20px;
+    transition: 200ms;
+}
+
+#file::-webkit-file-upload-button:hover {
+    background: rgb(82, 237, 240);
+    transform: translateY(-2px);
+    transition: 200ms;
+}
+
+#file::-webkit-file-upload-button:focus {
+    outline: none;
+}
 
 #imagePreview {
 
-    height: 350px;
+    height: 320px;
     width: 100%;
     /* border: solid 2px red; */
     object-fit: contain;
+}
+
+.custom-file-control:lang(en):empty::after {
+    content: "Choose file...";
+}
+
+#form {
+    width: 90%;
+    margin: 0px auto;
 }

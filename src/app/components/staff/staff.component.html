@@ -1,5 +1,6 @@
-
-<h1>Staff</h1>
+<section class="staffHeader">
+    <h1 id="pageTitle">Staff</h1>
+</section>
 
 
 <div id="form" class="card" *ngFor="let staff of staff">
@@ -11,16 +12,16 @@
 <!-- ================================================================= -->
 
 
-<img *ngIf="downloadURL == undefined else imagePreview" id="imagePreview" src="{{this.staff.url}}">
+  <img *ngIf="downloadURL == undefined else imagePreview" id="imagePreview" src="{{this.staff.url}}">
     <ng-template #imagePreview>
-      <img *ngIf="downloadURL !== undefined" id="imagePreview" [src]="downloadURL | async">
+          <img *ngIf="downloadURL !== undefined" id="imagePreview" [src]="downloadURL | async">
     </ng-template>
 
   <div class="form-group">
-    <label class="custom-file">
-      <input type="file" id="files" name="files[]" class="custom-file-input" (change)="previewPicture($event)">
-      <span class="custom-file-control"></span>
-    </label>
+    <!-- <label class="custom-file"> -->
+      <input type="file" id="file" name="files[]" class="" (change)="previewPicture($event)">
+      <!-- <span class="custom-file-control"></span> -->
+    <!-- </label> -->
   </div>
 
       <!-- ================================================================= -->
@@ -52,7 +53,7 @@
           </div>
         </div>
 
-        <input type="submit" value="Change" class="btn btn-primary btn-block"> 
+        <input type="submit" value="Save Changes" class="btn btn-primary btn-block"> 
   
     </form>
   </div>

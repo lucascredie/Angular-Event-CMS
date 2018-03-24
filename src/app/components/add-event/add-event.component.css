@@ -80,3 +80,23 @@ progress::-webkit-progress-value {
     -moz-box-shadow: 0px 2px 7px -3px rgba(0,0,0,0.35);
     box-shadow: 0px 2px 7px -3px rgba(0,0,0,0.35);
 }
+
+#file::-webkit-file-upload-button {
+    color: rgb(42, 46, 51);
+    height: 40px;
+    width: 120px;
+    border:none;
+    background: #29E1E3;
+    border-radius: 20px;
+    transition: 200ms;
+}
+
+#file::-webkit-file-upload-button:hover {
+    background: rgb(82, 237, 240);
+    transform: translateY(-2px);
+    transition: 200ms;
+}
+
+#file::-webkit-file-upload-button:focus {
+    outline: none;
+}

@@ -1,10 +1,11 @@
-<section class="eventsHeader">
+<section class="reportHeader">
 <h1 id="pageTitle">Reports Panel</h1>
 
 <button id="createButton" type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#Add-Report-Modal" data-backdrop="true">Create New</button>
 
 </section >
 
+<div id="myList" class="card">
 <section class="table-section">
   <table class="table table-striped table-responsive-sm">
       <thead>
@@ -32,7 +33,7 @@
   
     </table>
   </section>
-
+</div>
   <!-- ADD A REPORT -->
 
   <div class="modal fade " id="Add-Report-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -72,10 +73,9 @@
                   >
 
                   <div class="form-group">
-                      <label class="custom-file">
-                        <input type="file" id="files" name="files[]" class="custom-file-input" (change)="pdfSelect($event)">
-                        <span class="custom-file-control"></span>
-                      </label>
+                      
+                        <input type="file" id="file" name="files[]"  (change)="pdfSelect($event)">
+                        
                   </div>
 
                   <p *ngIf="!pdfIsSelected" id="message">

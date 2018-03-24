@@ -1,6 +1,15 @@
 .myPDF {
     height: 360px;
 }
+.reportHeader {
+    margin: 60px 0px;
+}
+
+#myList {
+    width: 90%;
+    margin: 0px auto;
+}
+
 .yearInput {
     width: 70px;
     text-align: center;
@@ -47,4 +56,24 @@
 #createButton:hover {
     transition: 200ms;
     background: rgb(88, 252, 255);
+}
+
+#file::-webkit-file-upload-button {
+    color: rgb(42, 46, 51);
+    height: 40px;
+    width: 120px;
+    border:none;
+    background: #29E1E3;
+    border-radius: 20px;
+    transition: 200ms;
+}
+
+#file::-webkit-file-upload-button:hover {
+    background: rgb(82, 237, 240);
+    transform: translateY(-2px);
+    transition: 200ms;
+}
+
+#file::-webkit-file-upload-button:focus {
+    outline: none;
 }

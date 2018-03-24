@@ -10,6 +10,15 @@
     z-index: 100;
     background: rgb(42, 46, 51);
   }
+  .skew1 {
+    margin-top: -149px;
+    background: rgb(42, 46, 51);
+    height: 150px;
+    transform: skewY(1.1deg);
+    z-index: 90;
+    position: relative;
+  }
+
   .skew2 {
     margin-top: -139px;
     background: #29E1E3;
