@@ -10,6 +10,7 @@ import { EventpanelComponent } from './components/eventpanel/eventpanel.componen
 import { NewsfeedpanelComponent } from './components/newsfeedpanel/newsfeedpanel.component'
 import { ReportpanelComponent } from './components/reportpanel/reportpanel.component';
 import { StaffComponent } from './components/staff/staff.component';
+import {LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   //create routes
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'newsfeed', component: NewsfeedpanelComponent },
   {path: 'reports', component: ReportpanelComponent },
   {path: 'staff', component: StaffComponent },
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

@@ -29,7 +29,8 @@ import { StaffComponent } from './components/staff/staff.component';
 import { StaffService } from './services/staff.service';
 import { NewsfeedService } from './services/newsfeed.service';
 import { ReportService } from './services/report.service';
-
+import { LoginComponent } from './components/login/login.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ReportService } from './services/report.service';
     ReportpanelComponent,
     AddEventComponent,
     EditEventComponent,
-    StaffComponent
+    StaffComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,7 @@ import { ReportService } from './services/report.service';
     AngularFireStorageModule,
     FormsModule
   ],
-  providers: [EventserviceService, StaffService, NewsfeedService, ReportService],
+  providers: [EventserviceService, StaffService, NewsfeedService, ReportService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
