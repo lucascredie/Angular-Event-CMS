@@ -26,6 +26,7 @@
           [(ngModel)]="event.eventName" 
           [ngClass]="{'is-invalid':eventName.errors && eventName.touched}"
           minlength="3"
+          maxlength="45"
           required >
 
         <div [hidden]="!eventName.errors?.required" class="invalid-feedback">
@@ -104,7 +105,7 @@
             [ngClass]="{'is-invalid':eventAbout.errors && eventAbout.touched}"
             rows="6"
             minlength="120"
-            maxlength="500"
+            maxlength="1000"
             required ></textarea>
   
           <div [hidden]="!eventAbout.errors?.required" class="invalid-feedback">
