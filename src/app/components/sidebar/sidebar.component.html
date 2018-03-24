@@ -1,6 +1,6 @@
 <!-- <aside class="sidebar mat-elevation-z8" *ngIf="isOpen, else minifiedSidebar" > -->
 
- <aside class="sidebar mat-elevation-z8" [class.minify]="!isOpen" >
+ <aside class="sidebar mat-elevation-z8" [class.minify]="!isOpen" *ngIf="isLoggedIn">
     <div class="icon-block-lg right-al openButton" (click)="toggleSidebar()">
         <span class="material-icons sidebar-icon" [class.rotate]="!isOpen">navigate_before</span>
      </div>

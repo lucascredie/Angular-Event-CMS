@@ -12,22 +12,26 @@ import { ReportpanelComponent } from './components/reportpanel/reportpanel.compo
 import { StaffComponent } from './components/staff/staff.component';
 import {LoginComponent } from './components/login/login.component';
 
+//GUARD
+import { AuthGuard } from './guards/auth.guard';
+
 const routes: Routes = [
   //create routes
   // {path: '', component: DashboardComponent },
-  {path: 'events/edit-event/:id', component: EditEventComponent },
-  {path: 'events/add-event', component: AddEventComponent },
-  {path: '', component: EventpanelComponent },
-  {path: 'newsfeed', component: NewsfeedpanelComponent },
-  {path: 'reports', component: ReportpanelComponent },
-  {path: 'staff', component: StaffComponent },
-  {path: 'login', component: LoginComponent}
+  {path: 'events/edit-event/:id', component: EditEventComponent, canActivate:[AuthGuard] },
+  {path: 'events/add-event', component: AddEventComponent, canActivate:[AuthGuard] },
+  {path: '', component: EventpanelComponent, canActivate:[AuthGuard] },
+  {path: 'newsfeed', component: NewsfeedpanelComponent, canActivate:[AuthGuard] },
+  {path: 'reports', component: ReportpanelComponent, canActivate:[AuthGuard] },
+  {path: 'staff', component: StaffComponent, canActivate:[AuthGuard] },
+  {path: 'login', component: LoginComponent} //not protected 
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes)
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard] //added for guard
 })
 export class RoutingModule { }
