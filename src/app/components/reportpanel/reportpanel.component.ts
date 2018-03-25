@@ -105,9 +105,6 @@ export class ReportpanelComponent implements OnInit {
         $('#Add-Report-Modal').modal('hide');
 
       }     
-
-      
-
   }
 
   goBackButton() {
