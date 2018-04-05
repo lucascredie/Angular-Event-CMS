@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
 
   email: string;
   password: string;
+  errorMessage: string;
 
   constructor(
     private authService: AuthService,
@@ -33,7 +34,12 @@ export class LoginComponent implements OnInit {
     })
     .catch(err => {
       console.log("error login in");
-      console.log(err.message);
+      console.log(this.email);
+
+      if(this.email != undefined && this.password != undefined) {
+        this.errorMessage = err.message;
+      }
+      
       this.router.navigate(["/login"]);
       
     })
