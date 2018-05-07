@@ -31,6 +31,7 @@ export class AddEventComponent implements OnInit {
     start_date: '',
     end_date: '',
     url: '',
+    pinned: false,
   };
 
   defaultImages: string[] = [
@@ -143,5 +144,7 @@ export class AddEventComponent implements OnInit {
   randomPictureIndex() { //from 0 to 4
     return Math.floor(Math.random() * 5);
   }
+
+ 
 
 }

@@ -6,4 +6,5 @@ export interface Event {
     end_date?: string;
     url?: any;
     imageName?: string;
+    pinned?: boolean;
 }

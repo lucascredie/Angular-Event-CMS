@@ -19,10 +19,12 @@
         <th scope="col">Starts</th>
         <th scope="col">Ends</th>
         <th scope="col"> </th>
+        <th scope="col"> Pinned </th>
       </tr>
     </thead>
 
     <tbody>
+      
       <tr *ngFor="let events of myEvents">
 
         <td> {{events.eventName}}</td>
@@ -32,6 +34,10 @@
         <td> 
           <button routerLink="/events/edit-event/{{events.id}}" type="button" class="btn btn-outline-primary btn-sm tableBTN">Edit</button> 
           <button (click)="deleteButtonPress(events)" type="button" class="btn btn-outline-danger btn-sm tableBTN deleteButton" data-toggle="modal" data-target="#myModal" data-backdrop="true">Delete</button>
+        </td>
+
+        <td>
+          <i (click)="pin(events)" class="material-icons pin" [class.pinned]="events.pinned">place</i>
         </td>
 
       </tr>

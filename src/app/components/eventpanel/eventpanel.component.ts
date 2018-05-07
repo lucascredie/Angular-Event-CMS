@@ -22,6 +22,9 @@ export class EventpanelComponent implements OnInit {
 
   listView: Boolean = true;
   myEvents: Event[];
+  pinnedEvents: Event[];
+  otherEvents:Event[];
+  
   myPicURLs: Observable<string>[];
   deadEvent: Event; //event that will be deleted
 
@@ -37,9 +40,17 @@ export class EventpanelComponent implements OnInit {
     //runs as soon as component is initialized
     //RETURNS NOTHING --
     this.eventSetvice.getEvents().subscribe(events => {
-      this.myEvents = events;
-      console.log(this.myEvents);
+      // this.myEvents = events;
+      // console.log(this.myEvents);
 
+      this.pinnedEvents = events.filter(event => event.pinned == true);
+      this.otherEvents = events.filter(event => event.pinned == false);
+
+      console.log(this.pinnedEvents);
+      console.log(this.otherEvents);
+
+      this.myEvents = this.pinnedEvents.concat(this.otherEvents);
+      
       // this.getAllPictures();
     })
 
@@ -85,6 +96,11 @@ export class EventpanelComponent implements OnInit {
     //this is grabbing pictures based on the name  from db and storing it in
     //events array in a property called URL 
     // this.getAllPictures();
+  }
+
+  pin(event: Event) {
+    event.pinned = !event.pinned;
+    this.eventSetvice.updateEvent(event);
   }
 
   // getAllPictures() {
