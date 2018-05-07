@@ -7,4 +7,5 @@ export interface Event {
     url?: any;
     imageName?: string;
     pinned?: boolean;
+    published?: boolean;
 }

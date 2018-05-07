@@ -37,7 +37,7 @@
         </td>
 
         <td>
-            <i (click)="unpublish(events)" class="material-icons checkmark"> check_circle</i>
+            <i (click)="publish(events)" class="material-icons checkmark" [class.published]="events.published"> check_circle</i>
         </td>
 
         <td> 

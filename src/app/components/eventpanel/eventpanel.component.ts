@@ -90,6 +90,7 @@ export class EventpanelComponent implements OnInit {
     this.deadEvent = {}; //sets it to empty object
     
   }
+  
   changeView() {
     this.toggle = false;
     this.listView = !this.listView;
@@ -101,6 +102,11 @@ export class EventpanelComponent implements OnInit {
   pin(event: Event) {
   
     event.pinned = !event.pinned;
+    this.eventSetvice.updateEvent(event);
+  }
+
+  publish(event: Event) {
+    event.published = !event.published;
     this.eventSetvice.updateEvent(event);
   }
 

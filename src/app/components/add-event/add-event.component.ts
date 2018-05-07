@@ -32,6 +32,7 @@ export class AddEventComponent implements OnInit {
     end_date: '',
     url: '',
     pinned: false,
+    published: true,
   };
 
   defaultImages: string[] = [

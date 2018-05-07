@@ -104,7 +104,7 @@ margin: 40px 0px 60px 0px;
 }
 
 
-.pin, .checkmark  {
+.pin {
     color: rgb(168, 168, 168);
     font-size: 30px; 
     text-align: center;
@@ -113,9 +113,10 @@ margin: 40px 0px 60px 0px;
 }
 
 .checkmark {
-    padding-top: 8px;
+    padding-left: 30px;
+    padding-top: 6px;
     font-size: 20px; 
-    color: #157EFB;
+    color: rgb(168, 168, 168);
 }
 
 .pin:hover, .checkmark:hover {
@@ -129,7 +130,12 @@ margin: 40px 0px 60px 0px;
     color: #39E1E2; 
     text-shadow: 0px 2px 2px  rgba(0,0,0,0.15);
 }
-.unPublished {
 
+.published {
+    padding-left: 30px;
+    padding-top: 6px;
+    font-size: 20px; 
+    color: #157EFB;
 }
+
 
