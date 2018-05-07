@@ -24,7 +24,7 @@ export class EventpanelComponent implements OnInit {
   myEvents: Event[];
   pinnedEvents: Event[];
   otherEvents:Event[];
-  
+
   myPicURLs: Observable<string>[];
   deadEvent: Event; //event that will be deleted
 
@@ -99,6 +99,7 @@ export class EventpanelComponent implements OnInit {
   }
 
   pin(event: Event) {
+  
     event.pinned = !event.pinned;
     this.eventSetvice.updateEvent(event);
   }

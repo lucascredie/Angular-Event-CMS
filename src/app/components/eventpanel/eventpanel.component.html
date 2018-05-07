@@ -18,8 +18,9 @@
         <th scope="col">Name</th>
         <th scope="col">Starts</th>
         <th scope="col">Ends</th>
+        <th scope="col"> Featured </th>
+        <th scope="col"> Published </th>
         <th scope="col"> </th>
-        <th scope="col"> Pinned </th>
       </tr>
     </thead>
 
@@ -31,13 +32,17 @@
         <td>{{events.start_date | date: 'MM/dd/yy'}}</td>
         <td>{{events.end_date | date: 'MM/dd/yy'}}</td>
         
-        <td> 
-          <button routerLink="/events/edit-event/{{events.id}}" type="button" class="btn btn-outline-primary btn-sm tableBTN">Edit</button> 
-          <button (click)="deleteButtonPress(events)" type="button" class="btn btn-outline-danger btn-sm tableBTN deleteButton" data-toggle="modal" data-target="#myModal" data-backdrop="true">Delete</button>
+        <td>
+            <i (click)="pin(events)" class="material-icons pin" [class.pinned]="events.pinned">star</i>
         </td>
 
         <td>
-          <i (click)="pin(events)" class="material-icons pin" [class.pinned]="events.pinned">place</i>
+            <i (click)="unpublish(events)" class="material-icons checkmark"> check_circle</i>
+        </td>
+
+        <td> 
+          <button routerLink="/events/edit-event/{{events.id}}" type="button" class="btn btn-outline-primary btn-sm tableBTN">Edit</button> 
+          <button (click)="deleteButtonPress(events)" type="button" class="btn btn-outline-danger btn-sm tableBTN deleteButton" data-toggle="modal" data-target="#myModal" data-backdrop="true">Delete</button>
         </td>
 
       </tr>
