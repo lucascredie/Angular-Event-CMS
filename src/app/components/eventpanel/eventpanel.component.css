@@ -51,7 +51,7 @@ margin: 40px 0px 60px 0px;
 }
 .slideToggle {
     text-align: right;
-    margin-right: 25px;
+    margin-right: 65px;
 }
 .myCard {
     opacity: 0;
@@ -136,6 +136,9 @@ margin: 40px 0px 60px 0px;
     padding-top: 6px;
     font-size: 20px; 
     color: #157EFB;
+}
+.fade {
+    opacity: 0.6;
 }
 
 

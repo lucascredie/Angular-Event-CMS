@@ -1,7 +1,7 @@
 <section class="eventsHeader">
 
   <div class="slideToggle">
-    <mat-slide-toggle  (click)="changeView()" > Change View </mat-slide-toggle>
+    <mat-slide-toggle  (click)="changeView()" > Card View </mat-slide-toggle>
     </div>
 <!-- [checked]="!listView" -->
     <h1 id="pageTitle">Event Panel</h1>
@@ -53,11 +53,11 @@
 </div>
 
 <!-- ======================================================================= -->
-<!-- Full View -->
+<!-- Card View -->
 <!-- ======================================================================= -->
 
 <ng-template #fullView>
-  <div class="card myCard mat-elevation-z1" style="width: 20rem;" *ngFor="let events of myEvents">
+  <div *ngFor="let events of myEvents" class="card myCard mat-elevation-z1" style="width: 20rem;">
     <img class="card-img-top myCardImage" src="{{events.url}}" alt="event image">
     <div class="card-block myCardContent">
       <h4 class="card-title myCardTitle">{{events.eventName}}</h4>
