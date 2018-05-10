@@ -77,6 +77,8 @@ export class EditEventComponent implements OnInit {
 
       } else {
 
+        value.published = true;
+        
         if(this.downloadURL != undefined) { //if image was changed
 
 
