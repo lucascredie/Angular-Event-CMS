@@ -8,4 +8,5 @@ export interface Event {
     imageName?: string;
     pinned?: boolean;
     published?: boolean;
+    hasDate?: boolean;
 }

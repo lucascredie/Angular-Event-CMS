@@ -110,6 +110,11 @@ export class EventpanelComponent implements OnInit {
     this.eventSetvice.updateEvent(event);
   }
 
+  displayDate(event: Event) {
+    event.hasDate = !event.hasDate;
+    this.eventSetvice.updateEvent(event);
+  }
+
   // getAllPictures() {
   //   this.myEvents.map(evnt => {
   //     evnt.url = this.getPicture(evnt.eventName);

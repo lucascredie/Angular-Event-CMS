@@ -33,6 +33,7 @@ export class AddEventComponent implements OnInit {
     url: '',
     pinned: false,
     published: true,
+    hasDate: true,
   };
 
   defaultImages: string[] = [

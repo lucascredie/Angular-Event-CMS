@@ -121,7 +121,7 @@ margin: 40px 0px 60px 0px;
 
 .pin:hover, .checkmark:hover {
     cursor: pointer;
-    transform: translateY(-3px);
+    /* transform: translateY(-3px); */
     transform-origin: 35px;
     transition: 200ms;
 }

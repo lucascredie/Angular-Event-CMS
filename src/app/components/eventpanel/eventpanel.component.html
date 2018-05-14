@@ -20,6 +20,7 @@
         <th scope="col">Ends</th>
         <th scope="col"> Featured </th>
         <th scope="col"> Published </th>
+        <th scope="col"> Date Display </th>
         <th scope="col"> </th>
       </tr>
     </thead>
@@ -39,6 +40,10 @@
         <td>
             <i (click)="publish(events)" class="material-icons checkmark" [class.published]="events.published"> check_circle</i>
         </td>
+
+        <td>
+          <i (click)="displayDate(events)" class="material-icons checkmark" [class.published]="events.hasDate"> date_range</i>
+      </td>
 
         <td> 
           <button routerLink="/events/edit-event/{{events.id}}" type="button" class="btn btn-outline-primary btn-sm tableBTN">Edit</button> 
