@@ -58,7 +58,13 @@ The app should open by default on http://localhost:4200/
 
 This section deals with file structure and components.
 
+### Models
+Models here represent the structure of the data (like a class) that is stored in the database. We have 3 main models: event, report and staff and each of them have properties and their respective data types.
+
+
 ### Components
+Each component is composed of an HTML Template, CSS, and Typescript file. They are organized this way:
+
 ```
 
 Components         
@@ -76,4 +82,40 @@ Components
 ```
 #### add-event
 
-this component handles 
+Handles the form that adds a new event. Includes picture selection and input checking.
+
+#### dashboard
+
+Is hidden from the sidebar but could be used to display data about the website.
+
+#### edit-event
+
+Handles the form that edits the event once its created. Grabs the information of the database and displays on the form so they can be changed. Pictures can be changed here too.
+
+#### eventpanel
+
+Contains all the events in a list or card view. It deals with the featured (called pinned in the code), publish and date display features. 
+
+#### login
+
+Uses the auth service to log in users.
+
+#### navbar
+
+In this app it serves stylistic purposes and also gives the user the ability to log off. 
+
+#### newsfeedpanel
+
+Is also hidden from the sidebar. This component could handle a news feed subscription system in the future. 
+
+#### reportpanel
+
+Handles the upload and deletion of pdf documents.
+
+#### sidebar
+
+Takes care of the main rounting of the app. Note that the newsfeed and dashboard could be added there (they are commented at the moment)
+
+#### staff
+
+Allows user to upload one picture and also change text about staff page.
