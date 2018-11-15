@@ -54,4 +54,26 @@ ng serve
 
 The app should open by default on http://localhost:4200/
 
-## Project Structure
+## Project Organization
+
+This section deals with file structure and components.
+
+### Components
+```
+
+Components         
+└── add-event   
+└── dashboard       (hidden)             
+└── edit-event   
+└── eventpanel
+└── login
+└── navbar
+└── newsfeedpanel   (hidden)     
+└── reportpanel
+└── sidebar
+└── staff
+
+```
+#### add-event
+
+this component handles 
