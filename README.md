@@ -119,3 +119,7 @@ Takes care of the main rounting of the app. Note that the newsfeed and dashboard
 #### staff
 
 Allows user to upload one picture and also change text about staff page.
+
+### Services
+
+In this app we have a different service that deals with the database for each form. The event deals with the CRUD operations of events, and so on.
