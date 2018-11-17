@@ -101,7 +101,7 @@
             [ngClass]="{'is-invalid':eventAbout.errors && eventAbout.touched}"
             rows="6"
             minlength="120"
-            maxlength="500"
+            maxlength="1000"
             required ></textarea>
   
           <div [hidden]="!eventAbout.errors?.required" class="invalid-feedback">
